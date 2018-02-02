@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CrudAbril</title>
-    <%= csrf_meta_tags %>
+
+<head>
+  <title>Crud Abril</title>
+  <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-nav" aria-expanded="false"></button>
+          <%= link_to "Crud Abril", root_path, {class: "navbar-brand"}%>
+        </div>
+
+        <div class="collapse navbar-collapse" id="menu-nav">
+          <ul class="nav navbar-nav">
+            <li class="<%= " active " if controller_name == "clients "%>">
+              <%= link_to "Clientes", clients_path %>
+            </li>
+            <li class="<%= " active " if controller_name == "products "%>">
+              <%= link_to "Produtos", products_path %>
+            </li>
+            <li class="<%= " active " if controller_name == "orders "%>">
+              <%= link_to "Pedidos", orders_path %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container-fluid">
     <%= yield %>
-  </body>
+  </div>
+</body>
+
 </html>

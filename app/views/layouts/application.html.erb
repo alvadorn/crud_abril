@@ -3,6 +3,7 @@
 
 <head>
   <title>Crud Abril</title>
+  <meta name=viewport content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,10 +12,15 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-nav" aria-expanded="false"></button>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-nav">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
           <%= link_to "Crud Abril", root_path, {class: "navbar-brand"}%>
         </div>
 

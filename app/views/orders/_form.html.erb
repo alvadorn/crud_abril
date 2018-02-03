@@ -11,17 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :product %>
-    <%= form.text_field :product, id: :order_product %>
+
+  <div class="form-group row">
+    <%= form.label :product, "Produto" %>
+    <%= form.select :product_id, Product.all.collect { |p| [p.name, p.id] }, { include_blank: "Nenhum selecionado" } %>
   </div>
 
-  <div class="field">
-    <%= form.label :client %>
-    <%= form.text_field :client, id: :order_client %>
+  <div class="form-group row">
+    <%= form.label :client, "Cliente" %>
+    <%= form.select :client_id, Client.all.collect { |c| [c.name, c.id] }, { include_blank: "Nenhum selecionado" } %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Salvar", class: "btn-success" %>
   </div>
 <% end %>

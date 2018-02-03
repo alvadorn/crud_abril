@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(version: 20180202213007) do
   end
 
   create_table "orders", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.integer "client_id", null: false
+    t.index ["client_id"], name: "index_orders_on_client_id"
+    t.index ["product_id"], name: "index_orders_on_product_id"
   end
 
   create_table "products", force: :cascade do |t|

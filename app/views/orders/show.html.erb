@@ -2,12 +2,12 @@
 
 <p>
   <strong>Product:</strong>
-  <%= @order.product %>
+  <%= @order.product.name %>
 </p>
 
 <p>
   <strong>Client:</strong>
-  <%= @order.client %>
+  <%= @order.client.name %>
 </p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |

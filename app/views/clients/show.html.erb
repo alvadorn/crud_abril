@@ -1,24 +1,32 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Id:</strong>
-  <%= @client.id %>
+<p id="notice">
+  <%= notice %>
 </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @client.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @client.email %>
-</p>
-
-<p>
-  <strong>Telephone:</strong>
-  <%= @client.telephone %>
-</p>
-
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<div class="row">
+  <div class="col-md-4">
+    <p>
+      <strong>Id:</strong>
+      <%= @client.id %>
+    </p>
+  </div>
+  <div class="col-md-4">
+    <p>
+      <strong>Nome:</strong>
+      <%= @client.name %>
+    </p>
+  </div>
+  <div class="col-md-4">
+    <p>
+      <strong>Email:</strong>
+      <%= @client.email %>
+    </p>
+  </div>
+  <div class="col-md-4">
+    <p>
+      <strong>Telefone:</strong>
+      <%= @client.telephone %>
+    </p>
+  </div>
+</div>
+<%= link_to 'Editar', edit_client_path(@client), class: "btn btn-warning"%>
+  <%= link_to 'Voltar', clients_path, class: "btn btn-primary"%>

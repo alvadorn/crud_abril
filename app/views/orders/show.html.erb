@@ -1,14 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Product:</strong>
-  <%= @order.product.name %>
+<p id="notice">
+  <%= notice %>
 </p>
 
-<p>
-  <strong>Client:</strong>
-  <%= @order.client.name %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<div class="row">
+  <p>
+    <strong>Produto:</strong>
+    <%= @order.product.name %>
+  </p>
+</div>
+<div class="row">
+  <p>
+    <strong>Cliente:</strong>
+    <%= @order.client.name %>
+  </p>
+</div>
+<%= link_to 'Editar', edit_order_path(@order), class: "btn btn-danger"%>
+<%= link_to 'Voltar', orders_path, class: "btn btn-primary"%>

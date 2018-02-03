@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+  <%= notice %>
+</p>
 
 <h1>Lista de Clientes</h1>
 
@@ -15,23 +17,35 @@
   <tbody>
     <% @clients.each do |client| %>
       <tr>
-        <td><%= client.name %></td>
-        <td><%= client.email %></td>
-        <td><%= client.telephone %></td>
+        <td>
+          <%= client.name %>
+        </td>
+        <td>
+          <%= client.email %>
+        </td>
+        <td>
+          <%= client.telephone %>
+        </td>
         <div class="collapse">
-        <td><%= link_to 'Exibir', client, class: "btn btn-success" %></td>
-        <td><%= link_to 'Editar', edit_client_path(client), class:"btn btn-warning" %></td>
-        <td><%= link_to 'Apagar', client, method: :delete, class:"btn btn-danger" ,data: { confirm: 'Você tem certeza que deseja apagar esse cliente? (Todos os pedidos relacionados a ele serão apagados também) ' } %></td>
-      </div>
+          <td>
+            <%= link_to 'Exibir', client, class: "btn btn-success" %>
+          </td>
+          <td>
+            <%= link_to 'Editar', edit_client_path(client), class:"btn btn-warning" %>
+          </td>
+          <td>
+            <%= link_to 'Apagar', client, method: :delete, class:"btn btn-danger" ,data: { confirm: 'Você tem certeza que deseja apagar esse cliente? (Todos os pedidos relacionados a ele serão apagados também) ' } %>
+          </td>
+        </div>
       </tr>
-    <% end %>
+      <% end %>
   </tbody>
 </table>
 
 
 <% if @clients.count == 0 %>
   <p class="table-none"> Nenhum cliente a ser exibido</p>
-<% end %>
-<br>
+  <% end %>
+    <br>
 
-<%= link_to 'Novo cliente', new_client_path, class: "btn btn-primary" %>
+    <%= link_to 'Novo cliente', new_client_path, class: "btn btn-primary" %>
